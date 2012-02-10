@@ -10,7 +10,13 @@ source $ZSH/oh-my-zsh.sh
 # aliases
 alias e="mvim"
 
+
 # env
 export EDITOR='vim'
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export TODO=~/Dropbox/todo
+
+# todos
+function todo(){ if [ $# -eq 0 ]; then cat $TODO; else echo "• $@" >> $TODO; fi }
+function todone() { sed -i -e "/$*/d" $TODO; }

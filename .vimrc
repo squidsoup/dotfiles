@@ -1,3 +1,6 @@
+"	General Settings
+set nocompatible
+set encoding=utf-8
 set runtimepath=~/.vim,~/.vim/vim-plugin-manager,$VIMRUNTIME
 set ruler
 set number
@@ -10,23 +13,24 @@ set splitbelow
 "set foldcolumn=3
 "set foldmethod=syntax
 "set foldlevelstart=99
-
-"	General Settings
-syntax on
-filetype plugin on
-filetype indent on
 set autoindent smartindent
 set ts=2
 set shiftwidth=2
 set sw=2
 
+" Syntax
+syntax on
+filetype plugin on
+filetype indent on
+
 " Backup
 set nobackup
 set nowritebackup
 
-" statusline
+" Statusline
 set laststatus=2
 set showcmd
+let g:Powerline_symbols = 'fancy'
 
 " mvim settings
 colorscheme molokai
@@ -34,18 +38,19 @@ if has('gui_running')
 	set guioptions-=m "remove menu bar
 	set guioptions-=T "remove toolbar
 	set guioptions-=r "remove scrollbar
-	set guifont=Monaco:h13
+	set guifont=Mensch\ for\ Powerline:h14
 endif
 
 " CoffeeScript
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab 
-" 	autocompile
+" autocompile
 au BufWritePost *.coffee silent CoffeeMake!
 
 " LaTeX settings
 let g:tex_flavor='latex'
 set iskeyword+=:
 set grepprg=grep\ -nH\ $*
+
 "	Menu Completion
 set wildmode=longest,list,full
 set wildmenu
