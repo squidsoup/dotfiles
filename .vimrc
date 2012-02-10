@@ -20,6 +20,14 @@ set ts=2
 set shiftwidth=2
 set sw=2
 
+" Backup
+set nobackup
+set nowritebackup
+
+" statusline
+set laststatus=2
+set showcmd
+
 " mvim settings
 colorscheme molokai
 if has('gui_running')
@@ -47,5 +55,15 @@ set wildignore+=*.o,*.obj,*.pyc,*.DS_STORE,*.db
 "	Keybindings
 noremap <space> :
 
+" Syntastic 
+let g:syntastic_enable_signs=1
+let g:syntastic_check_on_open=1
+let g:syntastic_auto_loc_list=1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+nnoremap <silent> ` :Errors<CR>
+
 " Init pathogen
 call pathogen#infect()
+call pathogen#helptags()
