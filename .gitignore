@@ -12,6 +12,7 @@
 .gitconfig
 .keepassx/
 .oh-my-zsh/
+.npm
 .pip/
 .rvm/
 .viminfo
