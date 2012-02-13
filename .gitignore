@@ -11,6 +11,7 @@
 .gem/
 .gitconfig
 .irssi/
+.java_history
 .keepassx/
 .lein/
 .m2
