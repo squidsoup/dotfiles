@@ -12,8 +12,10 @@
 .gitconfig
 .irssi/
 .keepassx/
-.oh-my-zsh/
+.lein/
+.m2
 .npm
+.oh-my-zsh/
 .pip/
 .rvm/
 .viminfo
