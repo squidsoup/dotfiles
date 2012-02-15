@@ -20,6 +20,7 @@
 .pip/
 .rvm/
 .viminfo
+.vim/.netrwhist
 .zcompdump
 .zsh-update
 .zsh_history
