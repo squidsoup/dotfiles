@@ -1,6 +1,7 @@
 /*
 !.*
 *.swp
+.viminfo.tmp
 .CFUserTextEncoding
 .DS_Store
 .ssh/

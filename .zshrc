@@ -9,6 +9,7 @@ source $ZSH/oh-my-zsh.sh
 
 # aliases
 alias e="mvim"
+alias ssh="ssh -C4c arcfour,blowfish-cbc"
 
 
 # env
