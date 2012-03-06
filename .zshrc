@@ -10,9 +10,13 @@ source $ZSH/oh-my-zsh.sh
 # aliases
 alias e="mvim"
 alias ssh="ssh -C4c arcfour,blowfish-cbc"
+. ~/.aliases-avos
 
+### env
 
-# env
+# avos
+export WORKON_HOME=$HOME/.virtualenvs
+# general
 export EDITOR='vim'
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
