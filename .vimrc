@@ -74,6 +74,9 @@ au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 " autocompile
 au BufWritePost *.coffee silent CoffeeMake!
 
+" Jinja
+au BufNewFile,BufReadPost *.jinja2 set ft=htmljinja.vim
+
 " VimClojure
 let vimclojureRoot = vimfiles."/bundle/VimClojure"
 let vimclojure#HighlightBuiltins = 1

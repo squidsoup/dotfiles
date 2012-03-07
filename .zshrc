@@ -16,6 +16,13 @@ alias ssh="ssh -C4c arcfour,blowfish-cbc"
 
 # avos
 export WORKON_HOME=$HOME/.virtualenvs
+
+alias avos_tunnel_yes="export USE_TUNNEL=true"
+alias avos_tunnel_no="unset USE_TUNNEL"
+
+alias avos_redis_yes="export USE_LOCAL_REDIS=true"
+alias avos_redis_no="unset USE_LOCAL_REDIS"
+
 # general
 export EDITOR='vim'
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/bin
