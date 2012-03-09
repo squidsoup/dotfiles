@@ -72,7 +72,7 @@ call pathogen#helptags()
 " CoffeeScript
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab 
 " autocompile
-au BufWritePost *.coffee silent CoffeeMake!
+au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 
 " Jinja
 au BufNewFile,BufReadPost *.jinja2 set ft=htmljinja.vim

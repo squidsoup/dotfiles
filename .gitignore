@@ -20,7 +20,9 @@
 .npm
 .oh-my-zsh/
 .pip/
+.pylint.d
 .rvm/
+.subversion/
 .viminfo
 .vim/.netrwhist
 .zcompdump
