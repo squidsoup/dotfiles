@@ -17,6 +17,7 @@ set splitbelow
 set autoindent smartindent
 set ts=2
 set shiftwidth=2
+set expandtab
 set sw=2
 
 " Java Classpath
