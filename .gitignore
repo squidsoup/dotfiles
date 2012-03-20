@@ -5,6 +5,7 @@
 .viminfo.tmp
 .CFUserTextEncoding
 .DS_Store
+.fu
 .ssh/
 .Trash/
 .bash_profile

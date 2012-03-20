@@ -25,7 +25,7 @@ alias avos_redis_no="unset USE_LOCAL_REDIS"
 
 # general
 export EDITOR='vim'
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/bin:/usr/local/share/python
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export TODO=~/Dropbox/todo
 export CLASSPATH="$CLASSPATH:$HOME/.lein/self-installs/leiningen-1.6.2-standalone.jar"
