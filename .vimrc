@@ -65,6 +65,12 @@ set wildignore+=*.o,*.obj,*.pyc,*.DS_STORE,*.db
 "	Keybindings
 noremap <space> :
 let mapleader=","
+map <silent> <Left> :call ToggleVExplorer()<CR>
+
+" File Explorer
+let g:netrw_liststyle=3 " Use tree-mode as default view
+let g:netrw_browse_split=4 " Open file in previous buffer
+let g:netrw_preview=1 " preview window shown in a vertically split
 
 " Init pathogen
 call pathogen#infect()
@@ -100,3 +106,23 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 nnoremap <silent> ` :Errors<CR>
 
+" Functions
+" Toggle Vexplore
+function! ToggleVExplorer()
+  if exists("t:expl_buf_num")
+      let expl_win_num = bufwinnr(t:expl_buf_num)
+      if expl_win_num != -1
+          let cur_win_nr = winnr()
+          exec expl_win_num . 'wincmd w'
+          close
+          exec cur_win_nr . 'wincmd w'
+          unlet t:expl_buf_num
+      else
+          unlet t:expl_buf_num
+      endif
+  else
+      exec '1wincmd w'
+      Vexplore
+      let t:expl_buf_num = bufnr("%")
+  endif
+endfunction
