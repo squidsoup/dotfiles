@@ -1,9 +1,6 @@
 [submodule ".vim/bundle/command-t"]
 	path = .vim/bundle/command-t
 	url = git://git.wincent.com/command-t.git
-[submodule "/Users/kit/.vim/bundle/VimClojure"]
-	path = /Users/kit/.vim/bundle/VimClojure
-	url = https://github.com/vim-scripts/VimClojure.git
 [submodule ".vim/bundle/vim-less"]
 	path = .vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
