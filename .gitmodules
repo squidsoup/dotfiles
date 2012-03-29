@@ -4,3 +4,9 @@
 [submodule ".vim/bundle/vim-less"]
 	path = .vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
+[submodule ".vim/bundle/fugitive"]
+	path = .vim/bundle/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "/Users/kit/.vim/bundle/vim-rails"]
+	path = /Users/kit/.vim/bundle/vim-rails
+	url = git://github.com/tpope/vim-rails.git
