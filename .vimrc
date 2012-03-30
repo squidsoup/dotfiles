@@ -47,6 +47,8 @@ set laststatus=2
 set showcmd
 let g:Powerline_symbols = 'fancy'
 
+" supertab
+ 
 " mvim settings
 colorscheme molokai
 if has('gui_running')
@@ -75,6 +77,14 @@ let g:netrw_preview=1 " preview window shown in a vertically split
 " Init pathogen
 call pathogen#infect()
 call pathogen#helptags()
+
+" Ruby
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+"improve autocomplete menu color
+highlight Pmenu ctermbg=238 gui=bold
 
 " CoffeeScript
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab 
