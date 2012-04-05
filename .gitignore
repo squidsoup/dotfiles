@@ -5,7 +5,9 @@
 .viminfo.tmp
 .CFUserTextEncoding
 .DS_Store
+.ec2/
 .fu
+.irb-history
 .ssh/
 .Trash/
 .bash_profile
@@ -18,12 +20,14 @@
 .keepassx/
 .lein/
 .m2
+.mysql_history
 .npm
 .oh-my-zsh/
 .pip/
 .pylint.d
 .rvm/
 .subversion/
+.vegas/
 .viminfo
 .vim/.netrwhist
 .zcompdump
