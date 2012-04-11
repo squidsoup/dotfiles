@@ -2,6 +2,7 @@
 !.*
 *.swp
 .aliases-avos
+.amazon_keys
 .viminfo.tmp
 .CFUserTextEncoding
 .DS_Store

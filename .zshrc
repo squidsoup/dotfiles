@@ -22,6 +22,7 @@ alias avos_tunnel_no="unset USE_TUNNEL"
 
 alias avos_redis_yes="export USE_LOCAL_REDIS=true"
 alias avos_redis_no="unset USE_LOCAL_REDIS"
+. ~/.amazon_keys
 
 # general
 export EDITOR='vim'
