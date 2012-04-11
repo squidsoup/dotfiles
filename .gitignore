@@ -23,6 +23,7 @@
 .mysql_history
 .npm
 .oh-my-zsh/
+.overtone/
 .pip/
 .pylint.d
 .rvm/
