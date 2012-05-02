@@ -4,9 +4,6 @@ plugins=(git github python ruby rvm osx vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
-# rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
 # aliases
 alias e="mvim"
 alias ssh="ssh -C4c arcfour,blowfish-cbc"
@@ -34,3 +31,6 @@ export CLASSPATH="$CLASSPATH:$HOME/.lein/self-installs/leiningen-1.7.1-standalon
 # todos
 function todo(){ if [ $# -eq 0 ]; then cat $TODO; else echo "• $@" >> $TODO; fi }
 function todone() { sed -i -e "/$*/d" $TODO; }
+
+# rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"

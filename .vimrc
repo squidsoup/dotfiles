@@ -78,11 +78,21 @@ let g:netrw_preview=1 " preview window shown in a vertically split
 call pathogen#infect()
 call pathogen#helptags()
 
+" Command-T
+" flush on vim window focus and file write
+augroup CommandTExtension
+  autocmd!
+  autocmd FocusGained * CommandTFlush
+  autocmd BufWritePost * CommandTFlush
+augroup END
+
 " Ruby
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
+
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
 

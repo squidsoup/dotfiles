@@ -13,6 +13,7 @@
 .Trash/
 .bash_profile
 .bashrc
+.cups/
 .dropbox/
 .gem/
 .gitconfig
@@ -22,10 +23,12 @@
 .lein/
 .m2
 .mysql_history
+.netrc
 .npm
 .oh-my-zsh/
 .overtone/
 .pip/
+.pry_history
 .pylint.d
 .rvm/
 .subversion/
