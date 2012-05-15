@@ -7,19 +7,8 @@ source $ZSH/oh-my-zsh.sh
 # aliases
 alias e="mvim"
 alias ssh="ssh -C4c arcfour,blowfish-cbc"
-. ~/.aliases-avos
+alias rpry="rails-console-pry -r pry-doc -r awesome_print"
 
-### env
-
-# avos
-export WORKON_HOME=$HOME/.virtualenvs
-
-alias avos_tunnel_yes="export USE_TUNNEL=true"
-alias avos_tunnel_no="unset USE_TUNNEL"
-
-alias avos_redis_yes="export USE_LOCAL_REDIS=true"
-alias avos_redis_no="unset USE_LOCAL_REDIS"
-. ~/.amazon_keys
 
 # general
 export EDITOR='vim'

@@ -17,6 +17,7 @@
 .dropbox/
 .gem/
 .gitconfig
+.irb_history
 .irssi/
 .java_history
 .keepassx/
