@@ -1,14 +1,27 @@
 " Environmnet {
   set nocompatible
+  filetype off
   set encoding=utf-8
   set background=dark
   set runtimepath=~/.vim,~/.vim/vim-plugin-manager,$VIMRUNTIME
   let vimfiles=$HOME . "/.vim"
 
-  " Init pathogen {
-    call pathogen#infect()
-    call pathogen#helptags()
+  " Init vundle {
+    set rtp+=~/.vim/bundle/vundle 
+    call vundle#rc()
+    Bundle 'gmarik/vundle'
   " }
+
+  " Bundles {
+    Bundle 'tpope/vim-rails'
+    Bundle 'tpope/vim-endwise'
+    Bundle 'Lokaltog/vim-powerline'
+    Bundle 'vim-ruby/vim-ruby'
+    Bundle 'scrooloose/syntastic'
+    Bundle 'vim-scripts/VimClojure'
+    Bundle 'git://git.wincent.com/command-t.git'
+  "}
+
 " }
 
 "	General {
