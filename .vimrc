@@ -19,6 +19,7 @@
     Bundle 'vim-ruby/vim-ruby'
     Bundle 'scrooloose/syntastic'
     Bundle 'vim-scripts/VimClojure'
+    Bundle 'jpalardy/vim-slime'
     Bundle 'git://git.wincent.com/command-t.git'
   "}
 
