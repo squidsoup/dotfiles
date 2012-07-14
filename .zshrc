@@ -9,6 +9,9 @@ alias e="mvim"
 alias ssh="ssh -C4c arcfour,blowfish-cbc"
 alias rpry="rails-console-pry -r pry-doc -r awesome_print"
 
+# binds
+bindkey -v
+bindkey '^R' history-incremental-search-backward
 
 # general
 export EDITOR='vim'
