@@ -70,12 +70,16 @@
 
   " gui/mvim settings {
     colorscheme molokai
-    "if has('gui_running')
+    if has('gui_running')
       set guioptions-=m "remove menu bar
       set guioptions-=T "remove toolbar
       set guioptions-=r "remove scrollbar
-      set guifont=Mensch\ for\ Powerline:h14
-    "endif
+      if has("gui_gtk2")
+        set guifont=Mensch\ for\ Powerline\ 11
+      else
+        set guifont=Mensch\ for\ Powerline:h14
+      endif
+    endif
   " }
 " }
 
