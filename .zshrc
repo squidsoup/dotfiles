@@ -6,7 +6,7 @@ source $ZSH/oh-my-zsh.sh
 
 # aliases
 alias e="mvim"
-alias ssh="ssh -C4c arcfour,blowfish-cbc"
+alias ssh="ssh -X"
 alias rpry="rails-console-pry -r pry-doc -r awesome_print"
 
 # binds
@@ -16,6 +16,7 @@ bindkey '^R' history-incremental-search-backward
 # general
 export EDITOR='vim'
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/bin:/usr/local/share/python
+PATH=$PATH:$HOME/SDK/jdk/bin # JDK 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export TODO=~/Dropbox/todo
 export CLASSPATH="$CLASSPATH:$HOME/.lein/self-installs/leiningen-1.7.1-standalone.jar"

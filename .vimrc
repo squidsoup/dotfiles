@@ -98,6 +98,13 @@
 " }
 
 " Lang {
+  " Python {
+    au BufNewFile,BufReadPost *.py setl shiftwidth=4 expandtab 
+    highlight BadWhitespace ctermbg=red guibg=red 
+    au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
+    au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+  " }
+
   " Java {
   let sep=":"
   let classpath = join(
