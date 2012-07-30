@@ -6,7 +6,7 @@ source $ZSH/oh-my-zsh.sh
 
 # aliases
 alias e="mvim"
-alias ssh="ssh -X"
+alias ssh="ssh -AX"
 alias rpry="rails-console-pry -r pry-doc -r awesome_print"
 
 # binds
