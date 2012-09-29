@@ -1,6 +1,6 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="kit"
-plugins=(git github python ruby rvm mercurial vi-mode)
+plugins=(git github python ruby rvm mercurial vi-mode zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
