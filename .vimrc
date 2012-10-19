@@ -20,7 +20,7 @@
     Bundle 'scrooloose/syntastic'
     Bundle 'vim-scripts/VimClojure'
     Bundle 'jpalardy/vim-slime'
-    Bundle 'git://git.wincent.com/command-t.git'
+    Bundle 'kien/ctrlp.vim'
   "}
 
 " }
@@ -159,14 +159,6 @@
     let vimclojure#HighlightContrib = 1
     let vimclojure#DynamicHighlighting = 1
     let vimclojure#ParenRainbow = 1
-  " }
-
-  " Command-T {
-    augroup CommandTExtension " flush on vim window focus and file write
-      autocmd!
-      autocmd FocusGained * CommandTFlush
-      autocmd BufWritePost * CommandTFlush
-    augroup END
   " }
 " }
 
