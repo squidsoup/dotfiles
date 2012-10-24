@@ -67,6 +67,10 @@
     set infercase
     set wildignore+=*.o,*.obj,*.pyc,*.DS_STORE,*.db
   " }
+  
+  " Control-P {
+    let g:ctrlp_working_path_mode = 0 
+  " }
 
   " gui/mvim settings {
     colorscheme molokai
