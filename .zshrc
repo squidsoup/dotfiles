@@ -19,6 +19,7 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/bin:
 PATH=$PATH:$HOME/SDK/jdk/bin # JDK 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export TODO=~/Dropbox/todo
+export JDK_HOME=$HOME/SDK/jdk
 export CLASSPATH="$CLASSPATH:$HOME/.lein/self-installs/leiningen-1.7.1-standalone.jar"
 
 # todos
