@@ -28,3 +28,9 @@ function todone() { sed -i -e "/$*/d" $TODO; }
 
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+# virtualenv activate
+activate() {
+    export VIRTUAL_ENV_DISABLE_PROMPT='1'
+      source ~/venvs/$1/bin/activate
+    }
