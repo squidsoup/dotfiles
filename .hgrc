@@ -1,0 +1,4 @@
+[extensions]
+record =
+hg-prompt = ~/.hgext/hg-prompt/prompt.py
+
