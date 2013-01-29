@@ -4,6 +4,7 @@
   set encoding=utf-8
   set background=dark
   set runtimepath=~/.vim,~/.vim/vim-plugin-manager,$VIMRUNTIME
+  set viminfo+=!
   let vimfiles=$HOME . "/.vim"
 
   " Init vundle {
@@ -13,6 +14,9 @@
   " }
 
   " Bundles {
+    Bundle 'tpope/vim-classpath'
+    Bundle 'tpope/vim-clojure-static'
+    Bundle 'tpope/vim-foreplay'
     Bundle 'tpope/vim-rails'
     Bundle 'tpope/vim-endwise'
     Bundle 'Lokaltog/vim-powerline'
