@@ -1,3 +1,6 @@
+[ui]
+username = Kit Randel <kit@nocturne.net.nz>
+
 [extensions]
 record =
 hg-prompt = ~/.hgext/hg-prompt/prompt.py
