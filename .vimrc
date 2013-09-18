@@ -16,15 +16,16 @@
   " Bundles {
     Bundle 'tpope/vim-classpath'
     Bundle 'tpope/vim-clojure-static'
-    Bundle 'tpope/vim-foreplay'
+    Bundle 'tpope/vim-fireplace'
+    Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-rails'
     Bundle 'tpope/vim-endwise'
     Bundle 'Lokaltog/vim-powerline'
     Bundle 'vim-ruby/vim-ruby'
     Bundle 'scrooloose/syntastic'
-    Bundle 'vim-scripts/VimClojure'
     Bundle 'jpalardy/vim-slime'
     Bundle 'kien/ctrlp.vim'
+    Bundle 'avakhov/vim-yaml'
   "}
 
 " }
@@ -32,8 +33,7 @@
 "	General {
   " Syntax {
     syntax on
-    filetype plugin on
-    filetype indent on
+    filetype plugin indent on
   " }
 
   " File Explorer {
@@ -53,7 +53,7 @@
   set number
   set showcmd
   set splitbelow
-  set vb
+  set t_vb=
   set ttyfast
   set titlestring=%f title
   set cursorline
@@ -63,13 +63,22 @@
     set laststatus=2
     set showcmd
     let g:Powerline_symbols = 'fancy'
+
+    if ! has('gui_running')
+      set ttimeoutlen=10
+      augroup FastEscape
+          autocmd!
+          au InsertEnter * set timeoutlen=0
+          au InsertLeave * set timeoutlen=1000
+      augroup END
+    endif
   " }
 
   "	Menu Completion {
     set wildmode=longest,list,full
     set wildmenu
     set infercase
-    set wildignore+=*.o,*.obj,*.pyc,*.DS_STORE,*.db
+    set wildignore+=*.o,*.obj,*.pyc,*.DS_STORE,*.db,*/tmp/*,*/vendor/*
   " }
   
   " Control-P {
@@ -87,16 +96,23 @@
       else
         set guifont=Mensch\ for\ Powerline:h14
       endif
+      set t_vb=
     endif
+  " }
+
+  " Searching {
+    set hlsearch " hilight matches 
+    set incsearch " incremental searching 
+    set ignorecase " searches are case insensitive...
+    set smartcase " ...unless containing at least one capital letter
   " }
 " }
 
 " Formatting {
   set autoindent smartindent
-  set ts=2
+  set tabstop=2
   set shiftwidth=2
   set expandtab
-  set sw=2
 " }
 
 "	Keybindings {
@@ -149,25 +165,23 @@
     set iskeyword+=:
     set grepprg=grep\ -nH\ $*
   " }
+
+  " Markdown {
+    au BufNewFile,BufRead *.md setlocal ft=markdown
+  " }
 " }
 
 " Plugins {
   " Syntastic {
     let g:syntastic_enable_signs=1
     let g:syntastic_auto_loc_list=0
+    let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
     set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
     set statusline+=%*
     nnoremap <silent> ` :Errors<CR>
   " }
 
-  " VimClojure {
-    let vimclojureRoot = vimfiles."/bundle/VimClojure"
-    let vimclojure#HighlightBuiltins = 1
-    let vimclojure#HighlightContrib = 1
-    let vimclojure#DynamicHighlighting = 1
-    let vimclojure#ParenRainbow = 1
-  " }
 " }
 
 " Functions {

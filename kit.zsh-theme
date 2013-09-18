@@ -11,16 +11,8 @@ function prompt_char {
     echo '☠ '
 }
 
-function hg_prompt_info {
-    hg prompt --angle-brackets "\
-< on %{$fg[magenta]%}<branch>%{$reset_color%}>\
-< at %{$fg[yellow]%}<tags|%{$reset_color%}, %{$fg[yellow]%}>%{$reset_color%}>\
-%{$fg[green]%}<status|modified|unknown><update>%{$reset_color%}<
-patches: <patches|join( → )|pre_applied(%{$fg[yellow]%})|post_applied(%{$reset_color%})|pre_unapplied(%{$fg_bold[black]%})|post_unapplied(%{$reset_color%})>>" 2>/dev/null
-}
-
 PROMPT='
-%{$fg[blue]%}%n%{$reset_color%}@%{$fg[red]%}%m%{$reset_color%}:%{$fg_bold[blue]%}$(collapse_pwd)%{$reset_color%} $(hg_prompt_info)$(git_prompt_info)
+%{$fg[blue]%}%n%{$reset_color%}@%{$fg[red]%}%m%{$reset_color%}:%{$fg_bold[blue]%}$(collapse_pwd)%{$reset_color%}$(git_prompt_info)
 $(virtualenv_info)$(prompt_char) '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="on %{$fg[red]%}"

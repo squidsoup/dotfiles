@@ -1,3 +1,10 @@
+===================
+DEPRECATION WARNING
+===================
+
+Plugin is currently in maintenance mode, no feature requests will be accepted.
+Vim-powerline will be deprecated in favour of https://github.com/Lokaltog/powerline once it is ready.
+
 =================
 Powerline for vim
 =================
@@ -31,33 +38,7 @@ instructions.
 Screenshots
 -----------
 
-**Normal mode**
-
-.. image:: http://i.imgur.com/xFmOt.png
-
-**Insert mode**
-
-.. image:: http://i.imgur.com/5vDlB.png
-
-**Command-T buffer** with custom color
-
-.. image:: http://i.imgur.com/fDIhz.png
-
-**Tagbar buffer** with custom color
-
-.. image:: http://i.imgur.com/WZUvj.png
-
-**Symbols when buffer is modified or read-only**
-
-.. image:: http://i.imgur.com/dGJHZ.png
-
-**Split window showing inactive buffer statusline**
-
-.. image:: http://i.imgur.com/z18KU.png
-
-**Normal mode without custom font**
-
-.. image:: http://i.imgur.com/yCybn.png
+.. image:: http://i.imgur.com/MsuIB.png
 
 Troubleshooting
 ---------------
@@ -73,6 +54,10 @@ I can't see the fancy symbols, what's wrong?
     a patched font.
 
     Make sure that vim is compiled with the ``--with-features=big`` flag.
+
+The fancy symbols look a bit blurry or "off"!
+    Make sure that you have patched all variants of your font (i.e. both the 
+    regular and the bold font files).
 
 I'm unable to patch my font, what should I do?
     Font patching is only known to work on most Linux and OS X machines. If 
@@ -119,6 +104,9 @@ I'm using tmux and Powerline looks like crap, what's wrong?
     your ``.tmux.conf`` to solve this issue::
 
         set -g default-terminal "screen-256color"
+
+    If you use iTerm2, make sure that you have enabled the setting 'Set 
+    locale variables automatically' in Profiles > Terminal > Environment.
 
 If you have any other issues and you can't find the answer in the docs, 
 please submit an issue on GitHub.
