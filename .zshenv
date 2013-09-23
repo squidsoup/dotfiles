@@ -6,6 +6,8 @@ export JDK_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_13.jdk/Contents/Home
 export AWS_IAM_HOME="$HOME/aws-dev/IAMCli-1.5.0"
 export AWS_CREDENTIAL_FILE=$HOME/.elasticbeanstalk/aws_credential_file
 export CLASSPATH="$CLASSPATH:$HOME/.lein/self-installs/leiningen-1.7.1-standalone.jar"
+export GOPATH="~/Dropbox/Projects/go"
+export GOROOT="/usr/local/Cellar/go/1.0.3"
 # PATH
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/bin:/usr/local/share/python:/usr/local/share/python3
 export PATH=$PATH:$HOME/SDK/jdk/bin # JDK 

@@ -3,7 +3,7 @@
   filetype off
   set encoding=utf-8
   set background=dark
-  set runtimepath=~/.vim,~/.vim/vim-plugin-manager,$VIMRUNTIME
+  set runtimepath=~/.vim,~/.vim/vim-plugin-manager,$VIMRUNTIME,$GOROOT/misc/vim
   set viminfo+=!
   let vimfiles=$HOME . "/.vim"
 
@@ -127,6 +127,11 @@
     highlight BadWhitespace ctermbg=red guibg=red 
     au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
     au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+  " }
+  
+  " Golang {
+    "set runtimepath+=$GOROOT/misc/vim
+    autocmd BufWritePost *.go :silent Fmt
   " }
 
   " Java {
