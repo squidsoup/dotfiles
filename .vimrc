@@ -26,6 +26,7 @@
     Bundle 'jpalardy/vim-slime'
     Bundle 'kien/ctrlp.vim'
     Bundle 'avakhov/vim-yaml'
+    Bundle 'othree/html5.vim'
   "}
 
 " }
