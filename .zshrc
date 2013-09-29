@@ -13,12 +13,13 @@ alias rpry="rails-console-pry -r pry-doc -r awesome_print"
 alias df="df -H"
 alias hr="hg record"
 alias hs="hg status"
-
+alias ls="ls -h"
+# needed for 256 colours in term2
+alias tmux="TERM=screen-256color-bce tmux"
 
 # binds
 bindkey -v
 bindkey '^R' history-incremental-search-backward
-
 
 # todos
 function todo(){ if [ $# -eq 0 ]; then cat $TODO; else echo "• $@" >> $TODO; fi }
