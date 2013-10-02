@@ -27,6 +27,7 @@
     Bundle 'kien/ctrlp.vim'
     Bundle 'avakhov/vim-yaml'
     Bundle 'othree/html5.vim'
+    Bundle 'wting/rust.vim'
   "}
 
 " }
@@ -84,6 +85,10 @@
   
   " Control-P {
     let g:ctrlp_working_path_mode = 0 
+  " }
+
+  " vim-slim {
+    let g:slime_target = "tmux"
   " }
 
   " gui/mvim settings {
