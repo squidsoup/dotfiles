@@ -14,6 +14,7 @@ alias df="df -H"
 alias hr="hg record"
 alias hs="hg status"
 alias ls="ls -h"
+alias sml="rlwrap sml"
 # needed for 256 colours in term2
 alias tmux="TERM=screen-256color-bce tmux"
 
