@@ -187,6 +187,7 @@
     let g:syntastic_enable_signs=1
     let g:syntastic_auto_loc_list=0
     let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+    let g:syntastic_python_checkers=['flake8']
     set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
     set statusline+=%*
@@ -214,4 +215,18 @@
         let t:expl_buf_num = bufnr("%")
     endif
   endfunction
+
+  " MULTIPURPOSE TAB KEY
+  " from: https://raw.github.com/garybernhardt/dotfiles/master/.vimrc
+  " Indent if we're at the beginning of a line. Else, do completion.
+  function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+      return "\<tab>"
+    else
+      return "\<c-p>"
+    endif
+  endfunction
+  inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+  inoremap <s-tab> <c-n>
 " }
