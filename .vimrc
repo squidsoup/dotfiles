@@ -15,7 +15,7 @@
 
   " Bundles {
     Bundle 'tpope/vim-classpath'
-    Bundle 'tpope/vim-clojure-static'
+    Bundle 'guns/vim-clojure-static'
     Bundle 'tpope/vim-fireplace'
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-rails'
