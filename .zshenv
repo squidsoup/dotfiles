@@ -1,3 +1,4 @@
+export os=${OSTYPE//[0-9.]/}
 export EDITOR='vim'
 export ANDROID_HOME="$HOME/SDK/android-sdk-macosx"
 export TODO=~/Dropbox/todo
