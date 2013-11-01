@@ -11,6 +11,6 @@ fi
 chsh -s /bin/zsh $USER
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
-ln -fs .zshrc ~/
-ln -fs .zshenv ~/
+ln -fs $HOME/dotfiles/.zshrc $HOME/.zshrc
+ln -fs $HOME/dotfiles/.zshenv $HOME/.zshenv
 
