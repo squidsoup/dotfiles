@@ -26,6 +26,8 @@ bindkey '^R' history-incremental-search-backward
 function todo(){ if [ $# -eq 0 ]; then cat $TODO; else echo "• $@" >> $TODO; fi }
 function todone() { sed -i -e "/$*/d" $TODO; }
 
+function check_response() { curl -s -w %{time_total}\\n -o /dev/null $1 }
+
 # virtualenv activate
 activate() {
     export VIRTUAL_ENV_DISABLE_PROMPT='1'
