@@ -85,6 +85,10 @@
   
   " Control-P {
     let g:ctrlp_working_path_mode = 0 
+    let g:ctrlp_custom_ignore = {
+      \ 'dir':  '\.git|\.hg|target|build',
+      \ 'file': '\.class$\|\.min.js$'
+      \ }
   " }
 
   " vim-slim {
