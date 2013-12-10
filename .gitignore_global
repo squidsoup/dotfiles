@@ -15,6 +15,8 @@ lib
 lib64
 __pycache__
 
+# Clojure
+out
 
 # Vim
 *.swo

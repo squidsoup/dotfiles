@@ -1,0 +1,14 @@
+[user]
+	name = Kit Randel
+	email = kit@nocturne.net.nz
+[core]
+	excludesfile = /Users/kit/.gitignore_global
+[credential]
+	helper = osxkeychain
+[push]
+	default = simple
+[alias]
+	co = checkout
+  br = branch
+  ci = commit
+  st = status
