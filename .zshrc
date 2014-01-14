@@ -20,7 +20,7 @@ alias sml="rlwrap sml"
 alias tmux="TERM=screen-256color-bce tmux"
 
 # binds
-bindkey -v
+bindkey -e # emacs mode
 bindkey '^R' history-incremental-search-backward
 
 # todos
