@@ -1,6 +1,7 @@
+
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
-#plugins=(git github python ruby rvm mercurial vi-mode zsh-syntax-highlighting)
+plugins=(git github python mercurial  zsh-syntax-highlighting)
 
 umask 002
 
@@ -28,14 +29,15 @@ function todone() { sed -i -e "/$*/d" $TODO; }
 
 function check_response() { curl -s -w %{time_total}\\n -o /dev/null $1 }
 
-# virtualenv activate
-activate() {
-    export VIRTUAL_ENV_DISABLE_PROMPT='1'
-      source ~/env/$1/bin/activate
-    }
-. /usr/local/share/python/virtualenvwrapper.sh
+export VIRTUAL_ENV_DISABLE_PROMPT=
+if [ -f "/usr/local/share/python/virtualenvwrapper.sh" ]; then
+  . /usr/local/share/python/virtualenvwrapper.sh   
+fi
+
 # set user@host only on remote hosts
 [[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER="kit"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
