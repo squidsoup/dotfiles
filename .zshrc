@@ -3,9 +3,18 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 plugins=(git github python mercurial  zsh-syntax-highlighting)
 
+source $ZSH/oh-my-zsh.sh
+
 umask 002
 
-source $ZSH/oh-my-zsh.sh
+# history
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt EXTENDED_HISTORY
+HISTSIZE=50000
+SAVEHIST=50000
+HISTFILE=~/.zsh_history
+export HISTFILE HISTSIZE SAVEHIST
 
 # handy aliases
 alias e="mvim"
