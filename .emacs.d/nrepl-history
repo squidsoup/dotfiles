@@ -1,0 +1,16 @@
+;; -*- coding: utf-8-unix -*-
+;; Automatically written history of nREPL session
+;; Edit at your own risk
+
+("(clojure.core/get (clojure.core/ns-map clojure.core/*ns*) 'cheddars)" "(clojure.core/get (clojure.core/ns-map clojure.core/*ns*) 'cheddar)" "(get (clojure.core/ns-map clojure.core/*ns*) 'cheddars)" "cheddars" "bries" "(clojure.core/refer 'cheese.taxonomy)" "(refer 'cheese.taxonomy)" "(in-ns 'cheese.analysis)" "(def bries [\"Wisconsin\" \"Somerset\" \"Brie de Meaux\" \"Brie de Melun\"])" "cheddars" "(def cheddars [\"mild\" \"medium\" \"strong\" \"sharp\" \"extra sharp\"])
+                             " "(in-ns 'cheese.taxonomy)" "(clojure.string/join \",\" [\"foo\", \"bar\", \"baz\"])" "(clojure.string/join [\"foo\", \"bar\", \"baz\"] \",\")" "(doc clojure.string/join)" "(doc clojure/string/join)" "(clojure.string/join \"foo\" \" bar\")" "(clojure.string/join! \"foo\" \" bar\")" "(take 1000 (map #(* % %) (range)))" "(take 10 (map #(* % %) (range)))" "(take 10 (ints-from 10))" "realized? ints-from)" "(realized? ints-from 7)" "(defn ints-from [n]
+             (cons n (lazy-seq (ints-from (inc n)))))" "(doc deref)
+" "(type foo)(
+                      )" "(= (deref #'foo) foo)" "(doc equals?)" "(equals? (deref #'foo) foo)" "foo" "(deref #'foo)" "(deref foo)" "foo" "(first foo)" "(foo first)" "(foo)" "foo" "(def foo [1 2 3])" "(defn foo [1 2 3])" "(def [1 2 3])" "(str->int \"10\")" "str->int" "#'str->int" "(get (ns-map *ns*) 'str->int)" "(ns-map *ns*)" "(ns-interns *ns*)" "(clean \"hi lol!    \")" "(defn clean
+             [text]
+             (-> text
+                 clojure.string/trim
+                 (clojure.string/replace #\"lol\" \"LOL\")))" "(type (now))" "(now)" "(defn now [] (java.util.Date.))" "(date/today)" "(today)" "(glitter-filter 7 
+                           (mapify (parse (slurp \"suspects.csv\"))))" "(glitter-filter 4 
+                           (mapify (parse (slurp \"suspects.csv\"))))" "(mapify (parse (slurp \"suspects.csv\")))" "(conversions)" "(mapify (parse (slurp \"suspects.csv\")))" "(first [0 1 2])" "(head [0 1 2])" "(rest [0 1 2])" "(doc slurp)" "(parse (slurp \"suspects.csv\"))" "(slurp \"suspects.csv\")" "(type (parse \"foo,bar\"))" "(parse \"foo,bar\")
+" "(read-string \"1\")" "(doc re-find)" "(doc read-string)" "(str->int \"hello\")" "(str->int \"1\")" "(#(+ 2 %) 2)" "(#(* % 3) 8)" "((fn [x] (* x 3)) 8)")
