@@ -1,2 +1,4 @@
 *.pyc
 .vim/bundle/*
+.emacs.d/elpa/*
+.emacs.d/backups/*
