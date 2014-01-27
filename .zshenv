@@ -20,10 +20,13 @@ export PATH=$PATH:/usr/local/texlive/bin # MacTex/TexLive
 export PATH=$PATH:/usr/local/amazon/kindlegen
 export PATH=$PATH:/Applications/Racket\ v5.3.5/bin
 export PATH=$PATH:/usr/local/munki
-export PATH=$PATH:$HOME/.rbenv/versions/1.9.3-p327/bin
 
 export WORKON_HOME=~/env
 # active venv in prompt managed by oh-my-zsh theme
 export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+
+# rbenv
+if hash rbenv 2>/dev/null;then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
