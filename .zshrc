@@ -1,4 +1,5 @@
 
+
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 plugins=(git github python mercurial  zsh-syntax-highlighting)
@@ -18,7 +19,7 @@ export HISTFILE HISTSIZE SAVEHIST
 
 # handy aliases
 alias e="mvim"
-alias ssh="ssh -AX"
+alias ssh="ssh -A"
 alias rpry="rails-console-pry -r pry-doc -r awesome_print"
 alias df="df -H"
 alias hr="hg record"
