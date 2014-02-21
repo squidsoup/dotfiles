@@ -30,6 +30,9 @@
 (setq-default sh-basic-offset 2)
 (setq-default sh-indentation 2)
 
+;; nginx
+(require 'nginx-mode)
+
 ;; Themes
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'load-path "~/.emacs.d/themes")
