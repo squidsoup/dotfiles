@@ -80,7 +80,7 @@
     set wildmode=longest,list,full
     set wildmenu
     set infercase
-    set wildignore+=*.o,*.obj,*.pyc,*.DS_STORE,*.db,*/tmp/*,*/vendor/*
+    set wildignore+=*.o,*.obj,*.pyc,*.DS_STORE,*.db,*/tmp/*,*/vendor/*,*/out/*
   " }
   
   " Control-P {
