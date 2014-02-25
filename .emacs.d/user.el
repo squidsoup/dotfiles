@@ -43,6 +43,15 @@
 ;; Flyspell often slows down editing so it's turned off
 (remove-hook 'text-mode-hook 'turn-on-flyspell)
 
+;; Flycheck
+(require 'flycheck)
+(require 'flycheck-color-mode-line)
+
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(eval-after-load "flycheck"
+  '(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
+
+
 ;; Clojure
 (add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
 (setq nrepl-history-file "~/.emacs.d/nrepl-history")
@@ -57,6 +66,17 @@
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'nrepl-mode))
 (add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
+
+;; Python
+(add-hook 'python-mode-hook 'auto-complete-mode)
+(add-hook 'python-mode-hook 'jedi:ac-setup)
+(add-hook 'python-mode-hook 'whitespace-mode)
+
+; Don't edit python bytecode
+(add-to-list 'completion-ignored-extensions ".pyc")
+
+;; Markdown
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 
 ;; hippie expand - don't try to complete with file names
 (setq hippie-expand-try-functions-list (delete 'try-complete-file-name hippie-expand-try-functions-list))
