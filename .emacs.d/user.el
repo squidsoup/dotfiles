@@ -75,6 +75,10 @@
 ; Don't edit python bytecode
 (add-to-list 'completion-ignored-extensions ".pyc")
 
+;; Haskell
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+
 ;; Markdown
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 
