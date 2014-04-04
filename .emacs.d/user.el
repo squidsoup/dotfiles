@@ -79,6 +79,9 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
+;; Rust
+(add-to-list 'auto-mode-alist '("\\.rs$" . rust-mode))
+
 ;; Markdown
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 

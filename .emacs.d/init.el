@@ -23,6 +23,9 @@
                       js2-mode
                       pony-mode
                       haskell-mode
+                      rust-mode
+                      yaml-mode
+                      sass-mode
                       )
   "A list of packages to ensure are installed at launch.")
 
