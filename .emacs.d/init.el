@@ -15,7 +15,7 @@
                       starter-kit-ruby
                       clojure-mode
                       clojure-test-mode
-                      nrepl
+                      cider
                       jedi
                       flycheck
                       flycheck-color-mode-line
