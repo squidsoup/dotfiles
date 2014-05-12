@@ -61,6 +61,9 @@
 (add-hook 'python-mode-hook 'jedi:ac-setup)
 (add-hook 'python-mode-hook 'whitespace-mode)
 
+;; HTML
+(add-hook 'html-mode-hook 'turn-off-auto-fill)
+
 ; Don't edit python bytecode
 (add-to-list 'completion-ignored-extensions ".pyc")
 
