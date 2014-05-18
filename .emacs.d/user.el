@@ -51,9 +51,16 @@
 (eval-after-load "flycheck"
   '(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
 
+;; JavaScript
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(custom-set-variables
+ '(js2-basic-offset 2)
+ '(js2-bounce-indent-p t))
 
 ;; Clojure
 (add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
+(add-to-list 'auto-mode-alist '("\\.cljs$" . clojure-mode))
+(setq clojure-defun-style-default-indent t)
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 
 ;; Python
@@ -61,11 +68,11 @@
 (add-hook 'python-mode-hook 'jedi:ac-setup)
 (add-hook 'python-mode-hook 'whitespace-mode)
 
-;; HTML
-(add-hook 'html-mode-hook 'turn-off-auto-fill)
-
 ; Don't edit python bytecode
 (add-to-list 'completion-ignored-extensions ".pyc")
+
+;; HTML
+(add-hook 'html-mode-hook 'turn-off-auto-fill)
 
 ;; Haskell
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
@@ -89,4 +96,6 @@
  '(backup-directory-alist '((".*" . "~/.emacs.d/backups/"))))
 
 ;; create the autosave dir if necessary, since emacs won't.
-(make-directory "~/.emacs.d/autosaves/" t)
+(defvar custom-autosaves-dir "~/.emacs.d/autosaves/")
+(make-directory custom-autosaves-dir t)
+(setq auto-save-directory custom-autosaves-dir)
