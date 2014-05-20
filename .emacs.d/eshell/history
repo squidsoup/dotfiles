@@ -1,9 +1,0 @@
-ls
-ls
-ls
-cp ../../resources/example.yaml ../../resources/example2.yaml
-cd ..
-cd ..
-ls
-lein deps
-lein deps
