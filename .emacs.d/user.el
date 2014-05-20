@@ -51,6 +51,10 @@
 (eval-after-load "flycheck"
   '(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
 
+;; Global programming
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'after-init-hook 'global-company-mode)
+
 ;; JavaScript
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (custom-set-variables
@@ -61,7 +65,10 @@
 (add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.cljs$" . clojure-mode))
 (setq clojure-defun-style-default-indent t)
+; Cider
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+(add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
+
 
 ;; Python
 (add-hook 'python-mode-hook 'auto-complete-mode)
