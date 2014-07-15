@@ -59,7 +59,7 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (custom-set-variables
  '(js2-basic-offset 2)
- '(js2-bounce-indent-p t))
+ '(js2-bounce-indent-p nil)) ; enabling this breaks indent on return
 
 ;; Clojure
 (add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
@@ -80,6 +80,48 @@
 
 ;; HTML
 (add-hook 'html-mode-hook 'turn-off-auto-fill)
+
+;; Sass
+
+; disable electric indent for this mode, as it doesn't appear to work
+; very well
+(add-hook 'sass-mode-hook (lambda () (electric-indent-local-mode -1)))
+
+; rebind return to newline-and-indent
+(add-hook 'sass-mode-hook 
+          (lambda () (local-set-key (kbd "C-j") #'newline-and-indent)))
+
+(add-hook 'sass-mode-hook 
+          (lambda () (local-set-key (kbd "C-m") #'newline-and-indent)))
+
+(defconst sass-line-keywords
+  '(("@\\(\\w+\\)"    0 font-lock-keyword-face sass-highlight-directive)
+    ("/[/*].*"  0 font-lock-comment-face)
+    ("[=+]\\w+" 0 font-lock-variable-name-face sass-highlight-script-after-match)
+    ("!\\w+"    0 font-lock-variable-name-face sass-highlight-script-after-match)
+    (":\\w+"    0 font-lock-variable-name-face)
+    ("\\w+\s*:" 0 font-lock-variable-name-face)
+    ("\\(\\w+\\)\s*="  1 font-lock-variable-name-face sass-highlight-script-after-match)
+    ("\\(:\\w+\\)\s*=" 1 font-lock-variable-name-face sass-highlight-script-after-match)
+    (".*"      sass-highlight-selector)))
+
+(defconst sass-selector-font-lock-keywords
+  '( ;; Attribute selectors (e.g. p[foo=bar])
+    ("\\[\\([^]=]+\\)" (1 font-lock-variable-name-face)
+     ("[~|$^*]?=\\([^]=]+\\)" nil nil (1 font-lock-string-face)))
+    ("&"       0 font-lock-constant-face)
+    ("\\.\\w+" 0 font-lock-type-face)
+    ("#\\w+"   0 font-lock-keyword-face)
+    ;; Pseudo-selectors, optionally with arguments (e.g. :first, :nth-child(12))
+    ("\\(::?\\w+\\)" (1 font-lock-variable-name-face)
+     ("(\\([^)]+\\))" nil nil (1 font-lock-string-face)))))
+
+(defconst sass-non-block-openers
+  '("^.*,$" ;; Continued selectors
+    "^ *@\\(extend\\|debug\\|warn\\|include\\|import\\)" ;; Single-line mixins
+    "^ *[$!]"     ;; Variables
+    ".*[^\s-]+: [^\s-]" ;; a setting of some sort
+    ))
 
 ;; Haskell
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)

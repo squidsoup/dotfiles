@@ -1,7 +1,8 @@
 [ui]
-username = Kit Randel <kit@nocturne.net.nz>
+username = Kit Randel <kit.randel@otago.ac.nz>
 
 [extensions]
 record =
 hg-prompt = ~/.hgext/hg-prompt/prompt.py
+shelve=
 
