@@ -26,6 +26,10 @@ alias hr="hg record"
 alias hs="hg status"
 alias ls="ls -h"
 alias sml="rlwrap sml"
+alias eamcs="emacs"
+if [[ $os == 'darwin' ]]; then  
+  alias flushdns="sudo killall -HUP mDNSResponder"
+fi
 # needed for 256 colours in term2
 alias tmux="TERM=screen-256color-bce tmux"
 
