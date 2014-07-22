@@ -27,6 +27,9 @@ alias hs="hg status"
 alias ls="ls -h"
 alias sml="rlwrap sml"
 alias eamcs="emacs"
+if [[ $os != 'darwin' ]]; then
+  alias mode="stat -c '%a %n'"
+fi
 if [[ $os == 'darwin' ]]; then  
   alias flushdns="sudo killall -HUP mDNSResponder"
 fi
