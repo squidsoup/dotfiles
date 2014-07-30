@@ -2,3 +2,5 @@
 .vim/bundle/*
 .emacs.d/elpa/*
 .emacs.d/backups/*
+.emacs.d/ac-comphist.dat
+.emacs.d/eshell/*
