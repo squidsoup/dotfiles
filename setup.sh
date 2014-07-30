@@ -33,4 +33,5 @@ fi
 echo 'Setting up emacs defaults'
 ln -fs $HOME/dotfiles/.emacs.d $HOME/.emacs.d
 
+source $HOME/.zshrc
 echo 'Done.'
