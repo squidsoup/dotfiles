@@ -1,5 +1,9 @@
 [ui]
 username = Kit Randel <kit.randel@otago.ac.nz>
+merge = emacs
+
+[merge-tools]
+emacs.args = -q --eval "(ediff-merge-with-ancestor \""$local"\" \""$other"\" \""$base"\" nil \""$output"\")"
 
 [extensions]
 record =
