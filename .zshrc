@@ -51,6 +51,10 @@ export VIRTUAL_ENV_DISABLE_PROMPT=
 if [ -f "/usr/local/share/python/virtualenvwrapper.sh" ]; then
   . /usr/local/share/python/virtualenvwrapper.sh   
 fi
+if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
+  . /usr/local/bin/virtualenvwrapper.sh   
+fi
+export WORKON_HOME=~/envs
 
 # set user@host only on remote hosts
 [[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER="kit"
