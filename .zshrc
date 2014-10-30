@@ -1,5 +1,6 @@
 
 
+
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 plugins=(git github python mercurial  zsh-syntax-highlighting)
@@ -27,7 +28,8 @@ alias hr="hg record"
 alias hs="hg status"
 alias ls="ls -h"
 alias sml="rlwrap sml"
-alias eamcs="emacs"
+alias eamcs="emacs -nw"
+alias emacs="meacs -nw"
 if [[ $os != 'darwin' ]]; then
   alias mode="stat -c '%a %n'"
 fi
@@ -51,6 +53,10 @@ export VIRTUAL_ENV_DISABLE_PROMPT=
 if [ -f "/usr/local/share/python/virtualenvwrapper.sh" ]; then
   . /usr/local/share/python/virtualenvwrapper.sh   
 fi
+if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
+  . /usr/local/bin/virtualenvwrapper.sh   
+fi
+export WORKON_HOME=~/envs
 
 # set user@host only on remote hosts
 [[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER="kit"
