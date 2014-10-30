@@ -29,7 +29,7 @@ alias hs="hg status"
 alias ls="ls -h"
 alias sml="rlwrap sml"
 alias eamcs="emacs -nw"
-alias emacs="meacs -nw"
+alias emacs="emacs -nw"
 if [[ $os != 'darwin' ]]; then
   alias mode="stat -c '%a %n'"
 fi
