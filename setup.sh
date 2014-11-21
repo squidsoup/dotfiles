@@ -31,6 +31,10 @@ fi
 echo 'Setting up emacs defaults'
 ln -fs $HOME/dotfiles/.emacs.d $HOME/.emacs.d
 
+echo 'Installing fonts'
+git clone https://github.com/Lokaltog/powerline-fonts.git ~/powerline-fonts/
+~/powerline-fonts/install.sh
+
 echo 'Setting up git default config...'
 git config --global user.email "kit@nocturne.net.nz"
 git config --global user.name "Kit Randel" 
