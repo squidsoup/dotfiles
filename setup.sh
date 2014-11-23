@@ -38,6 +38,7 @@ git clone https://github.com/Lokaltog/powerline-fonts.git ~/powerline-fonts/
 echo 'Setting up git default config...'
 git config --global user.email "kit@nocturne.net.nz"
 git config --global user.name "Kit Randel" 
+git config --global push.default simple
 
 echo 'Switching shell...'
 zsh
