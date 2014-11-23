@@ -132,6 +132,9 @@
 
 ;; Markdown
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
+(add-hook 'markdown-mode-hook (lambda ()
+                                (setq visual-line-mode t)))
+(add-hook 'markdown-mode-hook 'turn-off-auto-fill)
 
 ;; hippie expand - don't try to complete with file names
 (setq hippie-expand-try-functions-list (delete 'try-complete-file-name hippie-expand-try-functions-list))
