@@ -53,6 +53,9 @@ export VIRTUAL_ENV_DISABLE_PROMPT=
 if [ -f "/usr/local/share/python/virtualenvwrapper.sh" ]; then
   . /usr/local/share/python/virtualenvwrapper.sh   
 fi
+if [ -f "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" ]; then
+  . /usr/share/virtualenvwrapper/virtualenvwrapper.sh 
+fi
 if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
   . /usr/local/bin/virtualenvwrapper.sh   
 fi
