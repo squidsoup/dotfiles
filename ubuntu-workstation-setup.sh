@@ -1,4 +1,4 @@
-sudo apt-get install -y --no-install-recommends emacs keepassx gnome-tweak-tool chromium-browser tmux vlc virtualbox lxc packaging-dev irssi xclip
+sudo apt-get install -y --no-install-recommends emacs keepassx gnome-tweak-tool chromium-browser tmux vlc virtualbox lxc packaging-dev irssi xclip virtualenv virtualenvwrapper
 # dropbox
 cd ~ && wget https://linux.dropbox.com/packages/ubuntu/dropbox_1.6.2_amd64.deb
 sudo dpkg -i dropbox_1.6.2_amd64.deb
