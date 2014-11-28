@@ -1,0 +1,40 @@
+# ~/.tmuxinator/canonical.yml
+
+name: canonical
+root: ~/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - irc: irssi
+  - lpdev:
+      layout: main-horizontal
+      panes:
+        - lpdev-shell:
+            - ssh lpdev
+            - cd ~/launchpad/lp-branches
+            - clear
+        - lpdev-console:
+            - ssh lpdev
+            - cd ~/launchpad/lp-branches
+            - clear
+  - editor:
+      - cd ~/launchpad/lp-branches
+      - emacs -nw
+  - shell-1: cd launchpad/lp-branches
+  - notes: emacs ~/notes.txt
+  - shell-2:
+  - shell-3:

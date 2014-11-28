@@ -4,7 +4,11 @@ sudo add-apt-repository ppa:bzr
 sudo apt-get update
 
 # packages
-sudo apt-get install -y --no-install-recommends emacs keepassx gnome-tweak-tool chromium-browser tmux vlc virtualbox lxc packaging-dev irssi xclip virtualenv virtualenvwrapper libimobiledevice-utils git bzr bzr-pqm htop
+sudo apt-get install -y --no-install-recommends emacs keepassx gnome-tweak-tool chromium-browser tmux vlc virtualbox lxc packaging-dev irssi xclip virtualenv virtualenvwrapper libimobiledevice-utils git bzr bzr-pqm htop libssl-dev
+
+# rbenv
+git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build/
 
 # dropbox
 cd ~ && wget https://linux.dropbox.com/packages/ubuntu/dropbox_1.6.2_amd64.deb

@@ -39,14 +39,17 @@ fi
 if [[ $os == 'darwin' ]]; then  
   alias flushdns="sudo killall -HUP mDNSResponder"
 fi
+
+## tmux
 # needed for 256 colours in term2
 alias tmux="TERM=screen-256color-bce tmux"
+. $HOME/bin/tmuxinator.zsh
 
-# binds
+## binds
 bindkey -e # emacs mode
 bindkey '^R' history-incremental-search-backward
 
-# todos
+## todos
 function todo(){ if [ $# -eq 0 ]; then cat $TODO; else echo "• $@" >> $TODO; fi }
 function todone() { sed -i -e "/$*/d" $TODO; }
 
@@ -66,6 +69,12 @@ export WORKON_HOME=~/envs
 
 # set user@host only on remote hosts
 [[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER="kit"
+
+# rbenv
+if [ -d "$HOME/.rbenv" ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
