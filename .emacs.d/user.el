@@ -26,6 +26,9 @@
 ;; a .yml file
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
+;; X
+(setq x-select-enable-clipboard t)
+
 ;; shell scripts
 (setq-default sh-basic-offset 2)
 (setq-default sh-indentation 2)
@@ -38,7 +41,11 @@
 (add-to-list 'load-path "~/.emacs.d/themes")
 ;; Uncomment this to increase font size
 ;; (set-face-attribute 'default nil :height 140)
-(load-theme 'tomorrow-night-bright t)
+(load-theme 'solarized-dark t)
+
+;; ido
+(setq ido-use-filename-at-point nil)
+(setq ido-ignore-extensions t)
 
 ;; Flyspell often slows down editing so it's turned off
 (remove-hook 'text-mode-hook 'turn-on-flyspell)
@@ -58,7 +65,6 @@
 ;; JavaScript
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (custom-set-variables
- '(js2-basic-offset 2)
  '(js2-bounce-indent-p nil)) ; enabling this breaks indent on return
 
 ;; Clojure
@@ -68,7 +74,6 @@
 ; Cider
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
-
 
 ;; Python
 (add-hook 'python-mode-hook 'auto-complete-mode)
@@ -139,8 +144,6 @@
 ;; hippie expand - don't try to complete with file names
 (setq hippie-expand-try-functions-list (delete 'try-complete-file-name hippie-expand-try-functions-list))
 (setq hippie-expand-try-functions-list (delete 'try-complete-file-name-partially hippie-expand-try-functions-list))
-
-(setq ido-use-filename-at-point nil)
 
 ;; Put autosave and backup files (ie #foo#) in ~/.emacs.d/.
 (custom-set-variables
