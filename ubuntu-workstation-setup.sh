@@ -4,7 +4,7 @@ sudo add-apt-repository ppa:bzr
 sudo apt-get update
 
 # packages
-sudo apt-get install -y --no-install-recommends emacs keepassx gnome-tweak-tool chromium-browser tmux vlc virtualbox lxc packaging-dev irssi xclip virtualenv virtualenvwrapper libimobiledevice-utils git bzr bzr-pqm htop libssl-dev
+sudo apt-get install -y --no-install-recommends emacs keepassx gnome-tweak-tool chromium-browser tmux vlc virtualbox lxc packaging-dev irssi xclip virtualenv virtualenvwrapper libimobiledevice-utils bzr bzr-pqm htop libssl-dev tree
 
 # rbenv
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
