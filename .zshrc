@@ -32,6 +32,7 @@ alias sml="rlwrap sml"
 alias eamcs="emacs -nw"
 alias emacs="emacs -nw"
 alias make="noglob make"
+alias ack="ack-grep"
 
 if [[ $os != 'darwin' ]]; then
   alias mode="stat -c '%a %n'"
