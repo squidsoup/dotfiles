@@ -44,7 +44,6 @@ fi
 ## tmux
 # needed for 256 colours in term2
 alias tmux="TERM=screen-256color-bce tmux"
-. $HOME/bin/tmuxinator.zsh
 
 ## binds
 bindkey -e # emacs mode
