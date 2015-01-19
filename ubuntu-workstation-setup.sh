@@ -1,10 +1,11 @@
 # ppas
 sudo add-apt-repository ppa:launchpad
 sudo add-apt-repository ppa:juju/stable
+sudo add-apt-repository ppa:mojo-maintainers/ppa
 sudo apt-get update
 
 # packages
-sudo apt-get install -y --no-install-recommends emacs keepassx gnome-tweak-tool chromium-browser tmux vlc virtualbox lxc packaging-dev irssi xclip virtualenv virtualenvwrapper libimobiledevice-utils bzr bzr-pqm htop libssl-dev tree juju-core juju-local charm-tools byobu silversearcher-ag
+sudo apt-get install -y --no-install-recommends emacs keepassx gnome-tweak-tool chromium-browser tmux vlc virtualbox lxc packaging-dev irssi xclip virtualenv virtualenvwrapper libimobiledevice-utils bzr bzr-pqm htop libssl-dev tree juju-core juju-local charm-tools byobu silversearcher-ag mojo
 
 # rbenv
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
