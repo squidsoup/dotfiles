@@ -50,6 +50,11 @@
 ;; Flyspell often slows down editing so it's turned off
 (remove-hook 'text-mode-hook 'turn-on-flyspell)
 
+;; Modeline
+(setq frame-title-format
+      (list (format "%s %%S: %%j " (system-name))
+            '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+
 ;; Flycheck
 (require 'flycheck)
 (require 'flycheck-color-mode-line)
@@ -79,11 +84,15 @@
 (add-hook 'python-mode-hook 'auto-complete-mode)
 (add-hook 'python-mode-hook 'jedi:ac-setup)
 (add-hook 'python-mode-hook 'whitespace-mode)
+(add-to-list 'auto-mode-alist '("\\.tac$" . python-mode))
 
 ; Don't edit python bytecode
 (add-to-list 'completion-ignored-extensions ".pyc")
 
 ;; HTML
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
 (add-hook 'html-mode-hook 'turn-off-auto-fill)
 
 ;; Sass

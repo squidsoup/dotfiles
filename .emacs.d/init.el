@@ -16,7 +16,7 @@
                       starter-kit-bindings
                       starter-kit-ruby
                       clojure-mode
-                      clojure-test-mode
+                      ;;clojure-test-mode
                       rainbow-delimiters
                       cider
                       company
