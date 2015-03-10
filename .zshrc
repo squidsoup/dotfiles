@@ -3,7 +3,7 @@
 
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
-plugins=(git github python mercurial  zsh-syntax-highlighting)
+plugins=(git github python mercurial zsh-syntax-highlighting juju nova)
 DISABLE_UPDATE_PROMPT=true
 
 source $ZSH/oh-my-zsh.sh
@@ -36,6 +36,7 @@ alias ack="ack-grep"
 
 if [[ $os != 'darwin' ]]; then
   alias mode="stat -c '%a %n'"
+  alias open="xdg-open"
 fi
 if [[ $os == 'darwin' ]]; then  
   alias flushdns="sudo killall -HUP mDNSResponder"
@@ -67,6 +68,9 @@ if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
 fi
 export WORKON_HOME=~/envs
 
+export NVM_DIR="/home/kit/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
 # set user@host only on remote hosts
 [[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER="kit"
 
@@ -78,5 +82,3 @@ fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
