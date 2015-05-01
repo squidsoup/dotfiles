@@ -6,6 +6,11 @@
     (setenv "PATH" path-from-shell)
     (setq exec-path (split-string path-from-shell path-separator))))
 
+(defun add-to-mode (mode lst)
+  (dolist (file lst)
+    (add-to-list 'auto-mode-alist
+                 (cons file mode))))
+
 ;; Uncomment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height
 ;; (in lines high) Emacs will have whenever you start it
@@ -72,20 +77,23 @@
 (custom-set-variables
  '(js2-bounce-indent-p nil)) ; enabling this breaks indent on return
 
+(require 'buffer-move)
+
 ;; Clojure
-(add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
-(add-to-list 'auto-mode-alist '("\\.cljs$" . clojure-mode))
+(add-to-mode 'clojure-mode (list
+                            "\\.edn$"
+                            "\\.cljs$"))
 (setq clojure-defun-style-default-indent t)
 ; Cider
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 
 ;; Python
-(add-hook 'python-mode-hook 'auto-complete-mode)
-(add-hook 'python-mode-hook 'jedi:ac-setup)
+;;(add-hook 'python-mode-hook 'auto-complete-mode)
+;;(add-hook 'python-mode-hook 'jedi:setup)
+(add-hook 'python-mode-hook 'anaconda-mode)
 (add-hook 'python-mode-hook 'whitespace-mode)
 (add-to-list 'auto-mode-alist '("\\.tac$" . python-mode))
-
 ; Don't edit python bytecode
 (add-to-list 'completion-ignored-extensions ".pyc")
 
@@ -95,6 +103,11 @@
 
 (add-hook 'html-mode-hook 'turn-off-auto-fill)
 
+;; Zope templates
+(add-to-mode 'nxml-mode (list
+                         "\\.pt$"
+                         "\\.zcml$"
+                         "\\.xhtml$"))
 ;; Sass
 
 ; disable electric indent for this mode, as it doesn't appear to work

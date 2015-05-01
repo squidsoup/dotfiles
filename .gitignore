@@ -1,7 +1,9 @@
 *.pyc
+*.swp
 .vim/bundle/*
 .emacs.d/elpa/*
 .emacs.d/backups/*
 .emacs.d/ac-comphist.dat
 .emacs.d/eshell/*
 .emacs.d/.python-environments
+.emacs.d/session*
