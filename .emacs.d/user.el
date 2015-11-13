@@ -45,10 +45,11 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'load-path "~/.emacs.d/themes")
 ;; Uncomment this to increase font size
-;; (set-face-attribute 'default nil :height 140)
+;;(set-face-attribute 'default nil :height 100)
 (load-theme 'solarized-dark t)
 
 ;; ido
+
 (setq ido-use-filename-at-point nil)
 (setq ido-ignore-extensions t)
 
@@ -88,6 +89,10 @@
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 
+
+;; Golang
+(add-to-list 'load-path "~/.emacs.d/vendor/go-mode.el/")
+(require 'go-mode-autoloads)
 ;; Python
 ;;(add-hook 'python-mode-hook 'auto-complete-mode)
 ;;(add-hook 'python-mode-hook 'jedi:setup)
