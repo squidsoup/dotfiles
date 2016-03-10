@@ -28,7 +28,6 @@
                       flycheck
                       flycheck-color-mode-line
                       markdown-mode
-                      js2-mode
                       pony-mode
                       haskell-mode
                       rust-mode

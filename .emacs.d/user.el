@@ -30,6 +30,7 @@
 ;; Adding this code will make Emacs enter yaml mode whenever you open
 ;; a .yml file
 (add-to-list 'load-path "~/.emacs.d/vendor")
+(add-to-list 'load-path "~/.emacs.d/vendor/js3-mode")
 
 ;; X
 (setq x-select-enable-clipboard t)
@@ -38,8 +39,11 @@
 (setq-default sh-basic-offset 2)
 (setq-default sh-indentation 2)
 
+;; Misc
+;;(require 'buffer-move)
+(setq require-final-newline t)
 ;; nginx
-(require 'nginx-mode)
+;;(require 'nginx-mode)
 
 ;; Themes
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
@@ -49,7 +53,6 @@
 (load-theme 'solarized-dark t)
 
 ;; ido
-
 (setq ido-use-filename-at-point nil)
 (setq ido-ignore-extensions t)
 
@@ -69,23 +72,70 @@
 (eval-after-load "flycheck"
   '(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
 
+;; customize flycheck temp file prefix
+(setq-default flycheck-temp-prefix ".flycheck")
+
+
 ;; Global programming
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'after-init-hook 'global-company-mode)
 
-;; JavaScript
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-(custom-set-variables
- '(js2-bounce-indent-p nil)) ; enabling this breaks indent on return
+;; HTML
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-hook 'html-mode-hook 'turn-off-auto-fill)
 
-(require 'buffer-move)
+;; adjust indents for web-mode to 2 spaces
+(defun my-web-mode-hook ()
+  "Hooks for Web mode. Adjust indents"
+  ;;; http://web-mode.org/
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2))
+(add-hook 'web-mode-hook 'my-web-mode-hook)
+
+
+;; JavaScript
+(require 'js3-mode)
+(add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
+
+'(js3-auto-indent-p t)         ; it's nice for commas to right themselves.
+'(js3-enter-indents-newline t) ; don't need to push tab before typing
+'(js3-indent-on-enter-key t)   ; fix indenting before moving on
+
+;; disable jshint since we prefer eslint checking
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+          '(javascript-jshint)))
+
+;; disable json-jsonlist checking for json files
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+          '(json-jsonlist)))
+
+
+;; JSX
+;; use web-mode for .jsx files
+(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+;; use eslint with web-mode for jsx files
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+
+;; for better jsx syntax-highlighting in web-mode
+;; - courtesy of Patrick @halbtuerke
+(defadvice web-mode-highlight-part (around tweak-jsx activate)
+  (if (equal web-mode-content-type "jsx")
+    (let ((web-mode-enable-part-face nil))
+      ad-do-it)
+    ad-do-it))
+
 
 ;; Clojure
 (add-to-mode 'clojure-mode (list
                             "\\.edn$"
                             "\\.cljs$"))
 (setq clojure-defun-style-default-indent t)
-; Cider
+
+;; Cider
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 
@@ -102,17 +152,14 @@
 ; Don't edit python bytecode
 (add-to-list 'completion-ignored-extensions ".pyc")
 
-;; HTML
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
-(add-hook 'html-mode-hook 'turn-off-auto-fill)
 
 ;; Zope templates
 (add-to-mode 'nxml-mode (list
                          "\\.pt$"
                          "\\.zcml$"
                          "\\.xhtml$"))
+
 ;; Sass
 
 ; disable electric indent for this mode, as it doesn't appear to work
@@ -172,12 +219,8 @@
 (setq hippie-expand-try-functions-list (delete 'try-complete-file-name hippie-expand-try-functions-list))
 (setq hippie-expand-try-functions-list (delete 'try-complete-file-name-partially hippie-expand-try-functions-list))
 
-;; Put autosave and backup files (ie #foo#) in ~/.emacs.d/.
-(custom-set-variables
- '(auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t)))
- '(backup-directory-alist '((".*" . "~/.emacs.d/backups/"))))
-
 ;; create the autosave dir if necessary, since emacs won't.
 (defvar custom-autosaves-dir "~/.emacs.d/autosaves/")
 (make-directory custom-autosaves-dir t)
 (setq auto-save-directory custom-autosaves-dir)
+
