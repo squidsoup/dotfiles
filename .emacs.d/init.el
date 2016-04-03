@@ -28,6 +28,7 @@
                       flycheck
                       flycheck-color-mode-line
                       markdown-mode
+                      org-pomodoro
                       pony-mode
                       haskell-mode
                       rust-mode
