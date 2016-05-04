@@ -1,6 +1,3 @@
-
-
-
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 plugins=(git github python mercurial zsh-syntax-highlighting juju nova)
@@ -33,6 +30,8 @@ alias eamcs="emacs -nw"
 alias emacs="emacs -nw"
 alias make="noglob make"
 alias ack="ack-grep"
+alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
+alias rsync="rsync --progress"
 
 if [[ $os != 'darwin' ]]; then
   alias mode="stat -c '%a %n'"
@@ -42,6 +41,8 @@ if [[ $os == 'darwin' ]]; then
   alias flushdns="sudo killall -HUP mDNSResponder"
 fi
 
+## dircolors
+eval `dircolors ~/dotfiles/dircolors.ansi-dark`
 ## tmux
 # needed for 256 colours in term2
 alias tmux="TERM=screen-256color-bce tmux"
@@ -56,6 +57,10 @@ function todone() { sed -i -e "/$*/d" $TODO; }
 
 function check_response() { curl -s -w %{time_total}\\n -o /dev/null $1 }
 
+function pomo() { sleep 1500 && notify-send "Break" }
+function break5() { sleep 300 && notify-send "Back to work" }
+function break15() { sleep 900 && notify-send "Back to work" }
+
 export VIRTUAL_ENV_DISABLE_PROMPT=
 if [ -f "/usr/local/share/python/virtualenvwrapper.sh" ]; then
   . /usr/local/share/python/virtualenvwrapper.sh   
@@ -69,15 +74,20 @@ fi
 export WORKON_HOME=~/envs
 
 export NVM_DIR="/home/kit/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # set user@host only on remote hosts
 [[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER="kit"
 
-# rbenv
-if [ -d "$HOME/.rbenv" ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
+# fix for dumb terminals (emacs tramp)
+if [[ "$TERM" == "dumb" ]]
+then
+  unsetopt zle
+  unsetopt prompt_cr
+  unsetopt prompt_subst
+  unfunction precmd
+  unfunction preexec
+  PS1='$ '
 fi
 
 ### Added by the Heroku Toolbelt
