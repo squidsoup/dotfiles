@@ -17,7 +17,9 @@ HISTFILE=~/.zsh_history
 export HISTFILE HISTSIZE SAVEHIST
 
 # handy aliases
-alias rm="trash"
+if type trash &> /dev/null; then
+  alias rm="trash"
+fi
 alias e="mvim"
 alias ssh="ssh -A"
 alias rpry="rails-console-pry -r pry-doc -r awesome_print"
