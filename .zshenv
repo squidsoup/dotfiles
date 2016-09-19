@@ -12,9 +12,3 @@ export PATH=$PATH:$HOME/SDK/jdk/bin # JDK
 export WORKON_HOME=~/env
 # active venv in prompt managed by oh-my-zsh theme
 export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python"
-
-# rbenv
-if hash rbenv 2>/dev/null;then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-fi
