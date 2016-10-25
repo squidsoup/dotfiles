@@ -22,6 +22,7 @@
                       clojure-mode
                       ;;clojure-test-mode
                       rainbow-delimiters
+                      git-timemachine
                       cider
                       company
                       jedi
@@ -29,6 +30,7 @@
                       flycheck-color-mode-line
                       markdown-mode
                       org-pomodoro
+                      projectile
                       pony-mode
                       haskell-mode
                       rust-mode
@@ -56,3 +58,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'downcase-region 'disabled nil)
