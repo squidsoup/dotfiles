@@ -1,14 +1,31 @@
 [user]
-	name = Kit Randel
 	email = kit@nocturne.net.nz
-[core]
-	excludesfile = /Users/kit/.gitignore_global
-[credential]
-	helper = osxkeychain
-[push]
-	default = simple
+	name = Kit Randel
 [alias]
 	co = checkout
-  br = branch
-  ci = commit
-  st = status
+	br = branch
+	ci = commit
+	st = status
+	last = log -1 HEAD
+	unstage = reset HEAD --
+	recent = "for-each-ref --sort=-committerdate refs/heads --format='%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)'"
+[core]
+	whitespace = trailing-space,space-before-tab
+
+[url "git+ssh://name16@git.launchpad.dev/"]
+        insteadof = lpdev:
+        
+[url "git+ssh://blr@git.qastaging.paddev.net/"]
+        insteadof = lpqas:
+
+[url "git+ssh://blr@git.dogfood.paddev.net/"]
+	insteadof = lpdogfood:
+
+[url "git+ssh://blr@git.launchpad.net/"]
+        insteadof = lp:
+
+[url "git+ssh://blr@git.launchpad.net/~blr/+git/"]
+        insteadof = lpme:
+[push]
+	default = simple
+
