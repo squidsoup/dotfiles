@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Emacs Daemon
+GenericName=Editor
+Comment=Emacs Daemon
+Exec=emacs --daemon
+Terminal=false
+Type=Application
