@@ -1,0 +1,11 @@
+# node/js
+node_modules/
+*.map
+
+# python
+env/
+
+
+# django
+*.pot
+*.po
