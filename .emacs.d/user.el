@@ -143,6 +143,8 @@
 ;; Golang
 (add-to-list 'load-path "~/.emacs.d/vendor/go-mode.el/")
 (require 'go-mode-autoloads)
+
+
 ;; Python
 ;;(add-hook 'python-mode-hook 'auto-complete-mode)
 ;;(add-hook 'python-mode-hook 'jedi:setup)
@@ -151,7 +153,7 @@
 (add-to-list 'auto-mode-alist '("\\.tac$" . python-mode))
 ; Don't edit python bytecode
 (add-to-list 'completion-ignored-extensions ".pyc")
-
+;;(setq python-shell-interpreter "ipython --simple-prompt")
 
 
 ;; Zope templates
@@ -159,6 +161,7 @@
                          "\\.pt$"
                          "\\.zcml$"
                          "\\.xhtml$"))
+
 
 ;; Sass
 

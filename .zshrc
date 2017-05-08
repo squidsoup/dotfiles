@@ -32,7 +32,7 @@ alias less="less -FX"
 alias ls="ls -h --color"
 alias sml="rlwrap sml"
 alias eamcs="emacs -nw"
-alias emacs="emacs -nw"
+alias emacs="emacsclient -c -a emacs"
 alias make="noglob make"
 alias ack="ack-grep"
 alias rot13="tr '[A-Za-z]' '[N-ZA-Mn-za-m]'"
@@ -78,9 +78,6 @@ if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
 fi
 export WORKON_HOME=~/envs
 
-export NVM_DIR="/home/kit/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 # set user@host only on remote hosts
 [[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER="kit"
 
@@ -95,5 +92,3 @@ then
   PS1='$ '
 fi
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
